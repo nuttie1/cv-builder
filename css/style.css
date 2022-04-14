@@ -54,11 +54,46 @@ summary aside{
 summary aside ul {
     padding: 0px;
     border: black solid 2px;
-    border-radius: 5px;
+    border-radius: 10px;
     max-width: 100%;
     height: auto;
     padding: 5px;
 }
+.tekstit {
+    width: 100%;
+    margin: 10px;
+    padding: 5px 20px;
+    background-color: rgba(217,149,148,1);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
+}
+.tyokokemus-laatikko{
+    background-color: black;
+    display: block;
+    padding: 20px;
+}
+
+.tyokokemus {
+    width: 20%;
+    float: left;
+    padding: 10px;
+
+}
+.tyokokemus:last-child {
+    float: right;
+    width: 75%;
+}
+.tyokokemus h3{
+    margin: 0;
+}
+.tyokokemus h4{
+    margin: 0;
+}
+.tyokokemus-aika {
+    margin-top: 2px;
+}
+
+
 @media screen and (max-width: 800px) {
     summary {
         display: block;
