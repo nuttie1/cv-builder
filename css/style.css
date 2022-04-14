@@ -68,19 +68,17 @@ summary aside ul {
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
 }
 .tyokokemus-laatikko{
-    background-color: black;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
     padding: 20px;
 }
 
 .tyokokemus {
     width: 20%;
-    float: left;
     padding: 10px;
 
 }
 .tyokokemus:last-child {
-    float: right;
     width: 75%;
 }
 .tyokokemus h3{
