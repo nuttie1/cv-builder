@@ -24,6 +24,8 @@ summary {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    background-color: rgba(218, 202, 210, 0.5);
+    border-bottom: black solid 2px;
 }
 
 summary figure{
@@ -41,7 +43,7 @@ summary figure img {
 }
 summary figure h1 {
     text-align: center;
-    margin: 0px;
+    margin: 5px;
 }
 summary aside{
     width: 42.5%;
