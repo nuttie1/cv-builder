@@ -1,0 +1,74 @@
+body {
+    background-color: rgba(253,233,217,1);
+    margin: 0px;
+    padding: 0px;
+}
+#app {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+}
+section {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 80%;
+    border: black solid 2px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-image: url('/media/back.jpg');
+
+}
+summary {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+summary figure{
+    margin: 5%;
+    width: 42.5%;
+    justify-content: center;
+    margin-right: 2.5%;
+}
+summary figure img {
+    max-width: 80%;
+    min-width: 30%;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+summary figure h1 {
+    text-align: center;
+    margin: 0px;
+}
+summary aside{
+    width: 42.5%;
+    margin: 5%;
+    margin-left: 2.5%;
+    background-color: rgba(217,149,148,1);
+}
+summary aside ul {
+    padding: 0px;
+    border: black solid 2px;
+    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+    padding: 5px;
+}
+@media screen and (max-width: 800px) {
+    summary {
+        display: block;
+        justify-content: center;
+    }
+    summary aside {
+        width: 100%;
+        margin: auto;
+    }
+    summary figure {
+        width: 100%;
+        margin: auto;
+    }
+}
+
