@@ -67,6 +67,29 @@
             </div>
         </article>
     </section>
+    <footer>
+
+        <div id="kuvanimi">
+            <form action="">
+                <label for="name">Name:</label><br>
+                <input v-model="message" type="text" id="name" name="fname" ><br>
+                <label for="kuva">Picture:</label><br>
+                <input type="file" id="kuva" name="lname" value="Doe"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div id="tiedot">
+            <form action="/action_page.php">
+                <label for="fname2">First name:</label><br>
+                <input type="text" id="fname2" name="fname" value="John"><br>
+                <label for="lname2">Last name:</label><br>
+                <input type="text" id="lname2" name="lname" value="Doe"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+
+    </footer>
 
 
 </div>

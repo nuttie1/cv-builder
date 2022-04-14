@@ -15,6 +15,7 @@ section {
     margin: auto;
     width: 80%;
     border: black solid 2px;
+    border-radius: 5px;
     margin-top: 5%;
     margin-bottom: 5%;
     background-image: url('/media/back.jpg');
@@ -40,6 +41,8 @@ summary figure img {
     height: auto;
     margin: auto;
     display: block;
+    border-radius: 50%;
+    border: black solid 2px;
 }
 summary figure h1 {
     text-align: center;
@@ -107,3 +110,15 @@ summary aside ul {
     }
 }
 
+footer {
+    background-color: #fff8a1;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#kuvanimi{
+    width: 50%;
+}
+#tiedot{
+    width: 50%;
+}
