@@ -1,5 +1,8 @@
+
+
 body {
-    background-color: rgba(253,233,217,1);
+    background-image: url('../media/back3.jpg');
+    background-size: cover;
     margin: 0px;
     padding: 0px;
 }
@@ -9,24 +12,54 @@ body {
     height: 100%;
 
 }
+/* */
+/* Sivuston laajuiset muutokset ------------------------------------------------------------*/
+/* */
+:root {
+    --background: #ffba3b;
+    --border: black;
+}
+h1,h2,h3,h4 {
+    font-family: 'Akshar', sans-serif;
+}
+p {
+    font-family: 'Akshar', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+/* */
+/* Sivuston laajuiset muutokset ------------------------------------------------------------*/
+/* */
+
+
+/* */
+/* CV-container ------------------------------------------------------------*/
+/* */
 section {
     display: flex;
     flex-wrap: wrap;
     margin: auto;
     width: 80%;
-    border: black solid 2px;
+    border: var(--border) solid 3px;
     border-radius: 5px;
     margin-top: 5%;
     margin-bottom: 5%;
-    background-image: url('/media/back.jpg');
+    background-image: url('../media/back.jpg');
 
 }
+/* */
+/* CV-container ------------------------------------------------------------*/
+/* */
+
+
+
+
+/* */
+/* CV-yläpalkki ------------------------------------------------------------*/
+/* */
 summary {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    background-color: rgba(218, 202, 210, 0.5);
-    border-bottom: black solid 2px;
 }
 
 summary figure{
@@ -42,7 +75,7 @@ summary figure img {
     margin: auto;
     display: block;
     border-radius: 50%;
-    border: black solid 2px;
+    border: var(--border) solid 2px;
 }
 summary figure h1 {
     text-align: center;
@@ -52,21 +85,47 @@ summary aside{
     width: 42.5%;
     margin: 5%;
     margin-left: 2.5%;
-    background-color: rgba(217,149,148,1);
+
 }
 summary aside ul {
     padding: 0px;
-    border: black solid 2px;
+    border: var(--border) solid 2px;
     border-radius: 10px;
     max-width: 100%;
     height: auto;
-    padding: 5px;
+    padding: 10px;
+    background-color: var(--background);
 }
+
+@media screen and (max-width: 800px) {
+    summary {
+        display: block;
+        justify-content: center;
+    }
+    summary aside {
+        width: 100%;
+        margin: auto;
+    }
+    summary figure {
+        width: 100%;
+        margin: auto;
+    }
+
+}
+
+/* */
+/* CV-yläpalkki ------------------------------------------------------------*/
+/* */
+
+
+
+
+
 .tekstit {
     width: 100%;
     margin: 10px;
     padding: 5px 20px;
-    background-color: rgba(217,149,148,1);
+    background-color: var(--background);
     border-radius: 10px;
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
 }
@@ -93,32 +152,43 @@ summary aside ul {
 .tyokokemus-aika {
     margin-top: 2px;
 }
-
-
-@media screen and (max-width: 800px) {
-    summary {
-        display: block;
-        justify-content: center;
-    }
-    summary aside {
+@media screen and (max-width: 980px) {
+    .tyokokemus{
         width: 100%;
-        margin: auto;
     }
-    summary figure {
-        width: 100%;
-        margin: auto;
-    }
+
 }
+
+
+/* */
+/* Alapalkki ------------------------------------------------------------*/
+/* */
+
 
 footer {
     background-color: #fff8a1;
-    padding: 10px;
+    padding: 30px;
     display: flex;
     flex-wrap: wrap;
 }
 #kuvanimi{
     width: 50%;
 }
+#kuvanimi form{
+    padding: 5px;
+}
 #tiedot{
     width: 50%;
 }
+#tiedot form{
+    padding: 5px;
+}
+#tiedot input {
+    margin: 5px;
+}
+
+
+/* */
+/* Alapalkki ------------------------------------------------------------*/
+/* */
+

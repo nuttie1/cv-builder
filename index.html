@@ -5,6 +5,10 @@
     <title>CV-Builder</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="/media/giga.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Akshar&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
@@ -19,9 +23,9 @@
             <aside>
                 <ul style="list-style-type:none;">
                     <h2>Tiedot</h2>
-                    <li>Sähköposti: giga.chad@meme.fi</li>
-                    <li>Puh: 0441234555</li>
-                    <li>Asuinpaikka: Espoo</li>
+                    <li>Sähköposti: {{ email }}</li>
+                    <li>Puh: {{ phone }}</li>
+                    <li>Asuinpaikka: {{ city }}</li>
                 </ul>
 
             </aside>
@@ -71,20 +75,31 @@
 
         <div id="kuvanimi">
             <form action="">
-                <label for="name">Name:</label><br>
-                <input v-model="message" type="text" id="name" name="fname" ><br>
-                <label for="kuva">Picture:</label><br>
-                <input type="file" id="kuva" name="lname" value="Doe"><br><br>
-                <input type="submit" value="Submit">
+                <fieldset>
+                    <legend>Personalia:</legend>
+                    <label for="name">Name:</label><br>
+                    <input v-model="message" type="text" id="name" name="fname" ><br>
+                    <label for="kuva">Picture:</label><br>
+                    <input type="file" id="kuva" name="lname" value="Doe"><br><br>
+                    <input type="submit" value="Submit">
+                </fieldset>
             </form>
         </div>
         <div id="tiedot">
             <form action="/action_page.php">
-                <label for="fname2">First name:</label><br>
-                <input type="text" id="fname2" name="fname" value="John"><br>
-                <label for="lname2">Last name:</label><br>
-                <input type="text" id="lname2" name="lname" value="Doe"><br><br>
-                <input type="submit" value="Submit">
+                <fieldset>
+                    <legend>Personalia:</legend>
+                    <label for="email">Email:</label>
+                    <input v-model="email" type="text" id="email" name="email">
+
+                    <label for="phone">Phone number:</label>
+                    <input v-model="phone" type="text" id="phone" name="phone"><br>
+
+                    <label for="city">City:</label>
+                    <input v-model="city" type="text" id="city" name="city"><br><br>
+
+                    <input type="submit" value="Submit">
+                </fieldset>
             </form>
         </div>
 
