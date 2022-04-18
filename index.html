@@ -23,16 +23,16 @@
             <aside>
                 <ul style="list-style-type:none;">
                     <h2>Tiedot</h2>
-                    <li>Sähköposti: {{ email }}</li>
-                    <li>Puh: {{ phone }}</li>
-                    <li>Asuinpaikka: {{ city }}</li>
+                    <li><p>Sähköposti: {{ email }}</p></li>
+                    <li><p>Puh: {{ phone }}</p></li>
+                    <li><p>Asuinpaikka: {{ city }}</p></li>
                 </ul>
 
             </aside>
         </summary>
         <article class="tekstit">
-            <h2>Johdanto</h2>
-            <p>Olen ahkera työntekijä, jolla on huippu arvosanat monesta ammattikorkeakoulu tutkinnon. Olen myös
+            <h2>Johdanto {{colour}}</h2>
+            <p v-bind:style="{ color: "'rgb(' + "}">Olen ahkera työntekijä, jolla on huippu arvosanat monesta ammattikorkeakoulu tutkinnon. Olen myös
                 suorittanut tohtorin opinnot viime perjantaina. Diiba daaba leipä tekstiä. Lorem ipsum dolor sit amet,
                 consectetur adipiscing elit. In aliquet sapien aliquam lacus vulputate fringilla. In cursus sodales
                 augue a mattis. Aliquam consectetur mauris nec leo blandit, ut gravida massa imperdiet. In eget arcu id
@@ -84,6 +84,18 @@
                     <input type="submit" value="Submit">
                 </fieldset>
             </form>
+            <table>
+                <tr>
+                    <th><p>Red</p></th>
+                    <th><p>Green</p></th>
+                    <th><p>Blue</p></th>
+                </tr>
+                <tr>
+                    <td><input type="range" min="1" max="255" v-model="red" class="slider" id="red"></td>
+                    <td><input type="range" min="1" max="255" v-model="green" class="slider" id="green"></td>
+                    <td><input type="range" min="1" max="255" v-model="blue" class="slider" id="blue"></td>
+                </tr>
+            </table>
         </div>
         <div id="tiedot">
             <form action="/action_page.php">
