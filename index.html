@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Akshar&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Akshar&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Akshar&family=Source+Sans+Pro:wght@300;400&display=swap"
+          rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
@@ -62,7 +63,8 @@
                 </div>
                 <div class="tyokokemus">
                     <h4>Data Scientist</h4>
-                    <p> Olen ollut vuodesta 2020 ericssonilla töissä. Katson päämääräisesti tietokantoja. In aliquet sapien aliquam lacus vulputate fringilla. In
+                    <p> Olen ollut vuodesta 2020 ericssonilla töissä. Katson päämääräisesti tietokantoja. In aliquet
+                        sapien aliquam lacus vulputate fringilla. In
                         cursus sodales
                         augue a mattis. Aliquam consectetur mauris nec leo blandit, ut gravida massa imperdiet. In eget
                         arcu id
@@ -78,7 +80,7 @@
                 <fieldset>
                     <legend>Personalia:</legend>
                     <label for="name">Name:</label><br>
-                    <input v-model="message" type="text" id="name" name="fname" ><br>
+                    <input v-model="message" type="text" id="name" name="fname"><br>
                     <label for="kuva">Picture:</label><br>
                     <input type="file" id="kuva" name="lname" value="Doe"><br><br>
                     <input type="submit" value="Submit">
@@ -86,7 +88,7 @@
             </form>
         </div>
         <div id="tiedot">
-            <form action="/action_page.php">
+            <form action="/tasks" method="POST">
                 <fieldset>
                     <legend>Personalia:</legend>
                     <label for="email">Email:</label>
@@ -106,8 +108,16 @@
 
     </footer>
 
-
+<form>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname">
+</form>
 </div>
 </body>
-<script src="js/javascript.js"></script>
+
+<script type="module" src="js/javascript.js"></script>
+
+
 </html>
