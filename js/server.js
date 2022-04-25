@@ -1,16 +1,17 @@
-const http = require('http');
-const path = require("path");
+
 const db = require('./db')
 const bodyParser = require("body-parser");
-
+const port = 3000;
 
 const express = require("express");
 const app = express();
-const palvelin = http.createServer(app);
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/tasks', async (req, res) => {
+app.listen(port, () => console.log(`Listening on port ${port}`));
+
+app.get('/sending', async (req, res) => {
     try {
         const result = await db.pool.query("select * from testi");
         res.send(result);
@@ -21,4 +22,5 @@ app.get('/tasks', async (req, res) => {
 });
 
 
-app.listen(8080, () => console.log(`Listening on port ${8080}`));
+
+
