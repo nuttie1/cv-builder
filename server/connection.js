@@ -7,7 +7,6 @@ const cors = require('cors');
 const app = express();
 
 const port = 3000;
-
 'use strict';
 
 let urlencodedParser = bodyParser.urlencoded({ extended: true });
@@ -36,7 +35,7 @@ app.get('/index', (req, res) => {
 app.post('/api/submitting',urlencodedParser, function (req, res) {
 
     res.send("Hello POST!");
-    console.log("Täällä POST");
+    console.log("Got body", req.body);
     res.end();
 });
 app.get('/api/gettest', function (req, res){
