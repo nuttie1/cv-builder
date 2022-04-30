@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>CV-Builder</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="/media/giga.ico">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="/mediaco">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Akshar&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
     <section>
         <summary>
             <figure>
-                <img src="media/megagigalich.png">
+                <img src="../media/megagigalich.png" alt="Profile picture">
                 <h1>{{ message }}</h1>
             </figure>
             <aside>
@@ -32,12 +32,13 @@
             </aside>
         </summary>
         <article class="tekstit">
-            <h2>Johdanto {{colour}}</h2>
-            <p v-bind:style="{ color: "'rgb(' + "}">Olen ahkera työntekijä, jolla on huippu arvosanat monesta ammattikorkeakoulu tutkinnon. Olen myös
-                suorittanut tohtorin opinnot viime perjantaina. Diiba daaba leipä tekstiä. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. In aliquet sapien aliquam lacus vulputate fringilla. In cursus sodales
-                augue a mattis. Aliquam consectetur mauris nec leo blandit, ut gravida massa imperdiet. In eget arcu id
-                enim mattis ultrices. Mauris venenatis luctus luctus.
+            <h2>Johdanto {{ colour }}</h2>
+            <p>Olen ahkera työntekijä, jolla on huippu arvosanat monesta
+            ammattikorkeakoulu tutkinnon. Olen myös
+            suorittanut tohtorin opinnot viime perjantaina. Diiba daaba leipä tekstiä. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. In aliquet sapien aliquam lacus vulputate fringilla. In cursus sodales
+            augue a mattis. Aliquam consectetur mauris nec leo blandit, ut gravida massa imperdiet. In eget arcu id
+            enim mattis ultrices. Mauris venenatis luctus luctus.
             </p>
         </article>
         <article class="tekstit">
@@ -100,7 +101,7 @@
             </table>
         </div>
         <div id="tiedot">
-            <form action="/tasks" method="POST">
+            <form  method="POST" action="">
                 <fieldset>
                     <legend>Personalia:</legend>
                     <label for="email">Email:</label>
@@ -112,24 +113,25 @@
                     <label for="city">City:</label>
                     <input v-model="city" type="text" id="city" name="city"><br><br>
 
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit22asdasda">
                 </fieldset>
             </form>
         </div>
 
-
     </footer>
 
-<form>
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname">
-</form>
+    <form action="http://localhost:3000/api/submitting" method="post">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname">
+        <input type="submit" value="Submit">
+    </form>
+    <button formaction="/api/gettest" formmethod="get"> GET TESTI</button>
 </div>
 </body>
 
-<script type="module" src="js/javascript.js"></script>
+<script  src="../js/javascript.js"></script>
 
 
 </html>
