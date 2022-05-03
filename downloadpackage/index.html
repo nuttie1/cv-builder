@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="UTF-8">
+    <title>CV-Builder</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="../media/giga.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Akshar&family=Source+Sans+Pro:wght@300;400&display=swap"
+          rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <section>
+        <summary>
+            <figure>
+                <img src={{message}}>
+
+                <h1>{{ message }}</h1>
+            </figure>
+            <aside>
+                <ul style="list-style-type:none;">
+                    <h2>Tiedot</h2>
+                    <li><p>Sähköposti: {{ email }}</p></li>
+                    <li><p>Puh: {{ phone }}</p></li>
+                    <li><p>Asuinpaikka: {{ city }}</p></li>
+                </ul>
+
+            </aside>
+        </summary>
+        <article class="tekstit">
+            <h2>Johdanto</h2>
+            <p v-bind:style="{ color: color}">{{introduction}}</p>
+        </article>
+        <article class="tekstit" >
+            <h2>Koulutus</h2>
+            <div class="tyokokemus-laatikko" v-for="(hnk, index) in items">
+                <div class="tyokokemus">
+                    <h3>{{hnk.Name}}</h3>
+                    <p  class="tyokokemus-aika" >{{hnk.time}}</p>
+                </div>
+                <div class="tyokokemus">
+                    <h4>{{hnk.type}}</h4>
+                    <p v-bind:style="{ color: color}"> {{hnk.text}}</p>
+                </div>
+            </div>
+        </article>
+    </section>
+</div>
+</body>
+<script type="module" src="javascript.js"></script>
+<script>var zip = new JSZip();
+zip.file("Hello.txt", "Hello World\n");
+var img = zip.folder("images");
+img.file("smile.gif", imgData, {base64: true});
+zip.generateAsync({type:"blob"})
+.then(function(content) {
+  // see FileSaver.js
+  saveAs(content, "example.zip");
+});</script>
+</html>

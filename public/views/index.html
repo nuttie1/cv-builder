@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Akshar&family=Source+Sans+Pro:wght@300;400&display=swap"
           rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../js/FileSaver.min.js"></script>
+    <script src="../js/jszip.min.js"></script>
 </head>
 <body>
 
@@ -116,6 +118,7 @@
                 </fieldset>
             </form>
         <button id="saveNappi" v-on:click = "xd"> SAVE</button>
+            <button id="zip" v-on:click = "zippaus">zip</button>
         </div>
     </footer>
 

@@ -2,7 +2,7 @@
 let app = new Vue({
     el: '#app',
     data: {
-        message: 'Mr Giga Lich', email: 'giga.chad@meme.fi', phone: '044 1245 678',
+        message: 'megagigalich.png', email: 'giga.chad@meme.fi', phone: '044 1245 678',
         city: 'Espoo', color: '#000000',introduction: 'Hello this is person',
         items: [
             {
@@ -36,20 +36,6 @@ let app = new Vue({
             xmlhttp.open("POST", "http://localhost:3000/api/" + this.message + "/" + this.email + "/" +
                 this.phone + "/" + this.city + "/" + jsonItems, true);
             xmlhttp.send();
-        },
-        zippaus: function(){
-            var zip = new JSZip();
-            zip.file("Hello.txt", "Hello World\n");
-            zip.file("Hello2.txt", "Hello World\n");
-            var img = zip.folder("images");
-            zip.file("gigachad.jpg",'.jpg');
-            img.file("chad.webp").async("arraybuffer");
-            zip.generateAsync({type:"blob"})
-            .then(function(content) {
-                // see FileSaver.js
-                saveAs(content, "example.zip");
-            });
-
         }
 
     }

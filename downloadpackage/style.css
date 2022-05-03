@@ -1,0 +1,259 @@
+
+
+body {
+    background-image: url('back3.jpg');
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+}
+#app {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+}
+/* */
+/* Sivuston laajuiset muutokset ------------------------------------------------------------*/
+/* */
+:root {
+    --background: #ffba3b;
+    --border: black;
+}
+h1,h2,h3,h4 {
+    font-family: 'Akshar', sans-serif;
+}
+p {
+    font-family: 'Akshar', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+/* */
+/* Sivuston laajuiset muutokset ------------------------------------------------------------*/
+/* */
+
+
+/* */
+/* CV-container ------------------------------------------------------------*/
+/* */
+section {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 80%;
+    border: var(--border) solid 3px;
+    border-radius: 5px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-image: url('back.jpg');
+
+}
+/* */
+/* CV-container ------------------------------------------------------------*/
+/* */
+
+
+
+
+/* */
+/* CV-yläpalkki ------------------------------------------------------------*/
+/* */
+summary {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+summary figure{
+    margin: 5%;
+    width: 42.5%;
+    justify-content: center;
+    margin-right: 2.5%;
+}
+summary figure img {
+    max-width: 80%;
+    min-width: 30%;
+    height: auto;
+    margin: auto;
+    display: block;
+    border-radius: 50%;
+    border: var(--border) solid 2px;
+}
+summary figure h1 {
+    text-align: center;
+    margin: 5px;
+}
+summary aside{
+    width: 42.5%;
+    margin: 5%;
+    margin-left: 2.5%;
+
+}
+summary aside ul {
+    padding: 0px;
+    border: var(--border) solid 2px;
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    padding: 10px;
+    background-color: var(--background);
+}
+
+@media screen and (max-width: 800px) {
+    summary {
+        display: block;
+        justify-content: center;
+    }
+    summary aside {
+        width: 90%;
+        margin: auto;
+    }
+    summary figure {
+        width: 90%;
+        margin: auto;
+    }
+
+}
+
+/* */
+/* CV-yläpalkki ------------------------------------------------------------*/
+/* */
+
+
+
+
+
+.tekstit {
+    width: 100%;
+    margin: 10px;
+    padding: 5px 20px;
+    background-color: var(--background);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
+}
+.tyokokemus-laatikko{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.tyokokemus {
+    width: 20%;
+    padding: 10px;
+
+}
+.tyokokemus:last-child {
+    width: 75%;
+}
+.tyokokemus h3{
+    margin: 0;
+}
+.tyokokemus h4{
+    margin: 0;
+}
+.tyokokemus-aika {
+    margin-top: 2px;
+}
+@media screen and (max-width: 980px) {
+    .tyokokemus{
+        width: 100%;
+    }
+
+}
+
+
+/* */
+/* Alapalkki ------------------------------------------------------------*/
+/* */
+
+
+footer {
+    background-color: #fff8a1;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#kuvanimi{
+    width: 50%;
+}
+#kuvanimi form{
+    padding: 5px;
+}
+#kuvanimi table{
+    margin: auto;
+}
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+}
+#red::-webkit-slider-thumb{
+    background: red;
+}
+#red::-moz-range-thumb{
+    background: red;
+}
+#green::-webkit-slider-thumb{
+    background: green;
+}
+#green::-moz-range-thumb{
+    background: green;
+}
+#blue::-webkit-slider-thumb{
+    background: blue;
+}
+#blue::-moz-range-thumb{
+    background: blue;
+}
+
+
+#tiedot{
+    width: 50%;
+}
+#tiedot form{
+    padding: 5px;
+}
+#tiedot input {
+    margin: 5px;
+}
+#work{
+    width: 100%;
+}
+#introduction{
+    width: 60%;
+    height: 300px;
+    justify-content: center;
+    margin: auto;
+}
+#introduction textarea {
+    height: 300px;
+    width: 100%;
+}
+
+
+/* */
+/* Alapalkki ------------------------------------------------------------*/
+/* */
+
