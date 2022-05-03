@@ -45,6 +45,19 @@ app.post('/api/:message/:email/:phone/:city/:items', urlencodedParser, async (re
     res.end();
 
 })
+app.post('/api/getcv/:id', urlencodedParser, async (req, res) => {
+    res.status(200);
+
+    try {
+        let id = req.params.id.replace(":","");
+        const results = await db.pool.query("SELECT email, phone, name, introduction, items, residence FROM cv_table WHERE id_primary=" + id + ";");
+        res.send(results);
+        await db.pool.end();
+        console.log(results);
+    } catch (err) {
+        console.log("Haussa tuli virhe: " + err);
+    }
+})
 
 
 
