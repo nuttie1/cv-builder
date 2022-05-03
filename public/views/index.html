@@ -34,12 +34,7 @@
         </summary>
         <article class="tekstit">
             <h2>Johdanto</h2>
-            <p v-bind:style="{ color: color}">Olen ahkera työntekijä, jolla on huippu arvosanat monesta ammattikorkeakoulu tutkinnon. Olen myös
-                suorittanut tohtorin opinnot viime perjantaina. Diiba daaba leipä tekstiä. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. In aliquet sapien aliquam lacus vulputate fringilla. In cursus sodales
-                augue a mattis. Aliquam consectetur mauris nec leo blandit, ut gravida massa imperdiet. In eget arcu id
-                enim mattis ultrices. Mauris venenatis luctus luctus.
-            </p>
+            <p v-bind:style="{ color: color}">{{introduction}}</p>
         </article>
         <article class="tekstit" >
             <h2>Koulutus</h2>
@@ -91,6 +86,13 @@
                 <fieldset>
                     <input type="text" v-model="color"/>
                     <input type="color" v-model="color"/>
+                </fieldset>
+            </form>
+        </div>
+        <div id="introduction">
+            <form>
+                <fieldset>
+                    <textarea type="text" v-model="introduction"></textarea>
                 </fieldset>
             </form>
         </div>

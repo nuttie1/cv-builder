@@ -241,6 +241,16 @@ footer {
 #work{
     width: 100%;
 }
+#introduction{
+    width: 60%;
+    height: 300px;
+    justify-content: center;
+    margin: auto;
+}
+#introduction textarea {
+    height: 300px;
+    width: 100%;
+}
 
 
 /* */

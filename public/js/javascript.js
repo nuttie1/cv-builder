@@ -3,7 +3,7 @@ let app = new Vue({
     el: '#app',
     data: {
         message: 'Mr Giga Lich', email: 'giga.chad@meme.fi', phone: '044 1245 678',
-        city: 'Espoo', color: '#000000',
+        city: 'Espoo', color: '#000000',introduction: 'Hello this is person',
         items: [
             {
                 Name: 'Prisma, Iso-Omena', time: '2018 - 2020', type: 'Hyllyttäjä',
