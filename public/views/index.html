@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>CV-Builder</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="icon" type="image/x-icon" href="/mediaco">
+    <link rel="icon" type="image/x-icon" href="../media/giga.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Akshar&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
     <section>
         <summary>
             <figure>
-                <img src="../media/megagigalich.png" alt="Profile picture">
+                <img src="media/megagigalich.png">
                 <h1>{{ message }}</h1>
             </figure>
             <aside>
@@ -32,44 +32,24 @@
             </aside>
         </summary>
         <article class="tekstit">
-            <h2>Johdanto {{ colour }}</h2>
-            <p>Olen ahkera työntekijä, jolla on huippu arvosanat monesta
-            ammattikorkeakoulu tutkinnon. Olen myös
-            suorittanut tohtorin opinnot viime perjantaina. Diiba daaba leipä tekstiä. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. In aliquet sapien aliquam lacus vulputate fringilla. In cursus sodales
-            augue a mattis. Aliquam consectetur mauris nec leo blandit, ut gravida massa imperdiet. In eget arcu id
-            enim mattis ultrices. Mauris venenatis luctus luctus.
+            <h2>Johdanto</h2>
+            <p v-bind:style="{ color: color}">Olen ahkera työntekijä, jolla on huippu arvosanat monesta ammattikorkeakoulu tutkinnon. Olen myös
+                suorittanut tohtorin opinnot viime perjantaina. Diiba daaba leipä tekstiä. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit. In aliquet sapien aliquam lacus vulputate fringilla. In cursus sodales
+                augue a mattis. Aliquam consectetur mauris nec leo blandit, ut gravida massa imperdiet. In eget arcu id
+                enim mattis ultrices. Mauris venenatis luctus luctus.
             </p>
         </article>
-        <article class="tekstit">
+        <article class="tekstit" >
             <h2>Koulutus</h2>
-            <div class="tyokokemus-laatikko">
+            <div class="tyokokemus-laatikko" v-for="(hnk, index) in items">
                 <div class="tyokokemus">
-                    <h3>Prisma, Iso-Omena</h3>
-                    <p class="tyokokemus-aika">2018 - 2020</p>
+                    <h3>{{hnk.Name}}</h3>
+                    <p  class="tyokokemus-aika" >{{hnk.time}}</p>
                 </div>
                 <div class="tyokokemus">
-                    <h4>Hyllyttäjä</h4>
-                    <p> Olin kaksi vuotta prismalla töiussä. In aliquet sapien aliquam lacus vulputate fringilla. In
-                        cursus sodales
-                        augue a mattis. Aliquam consectetur mauris nec leo blandit, ut gravida massa imperdiet. In eget
-                        arcu id
-                        enim mattis ultrices. Mauris venenatis luctus luctus.</p>
-                </div>
-            </div>
-            <div class="tyokokemus-laatikko">
-                <div class="tyokokemus">
-                    <h3>Ericsson oy, Espoo</h3>
-                    <p class="tyokokemus-aika">2020 - jatkuu</p>
-                </div>
-                <div class="tyokokemus">
-                    <h4>Data Scientist</h4>
-                    <p> Olen ollut vuodesta 2020 ericssonilla töissä. Katson päämääräisesti tietokantoja. In aliquet
-                        sapien aliquam lacus vulputate fringilla. In
-                        cursus sodales
-                        augue a mattis. Aliquam consectetur mauris nec leo blandit, ut gravida massa imperdiet. In eget
-                        arcu id
-                        enim mattis ultrices. Mauris venenatis luctus luctus.</p>
+                    <h4>{{hnk.type}}</h4>
+                    <p v-bind:style="{ color: color}"> {{hnk.text}}</p>
                 </div>
             </div>
         </article>
@@ -87,21 +67,9 @@
                     <input type="submit" value="Submit">
                 </fieldset>
             </form>
-            <table>
-                <tr>
-                    <th><p>Red</p></th>
-                    <th><p>Green</p></th>
-                    <th><p>Blue</p></th>
-                </tr>
-                <tr>
-                    <td><input type="range" min="1" max="255" v-model="red" class="slider" id="red"></td>
-                    <td><input type="range" min="1" max="255" v-model="green" class="slider" id="green"></td>
-                    <td><input type="range" min="1" max="255" v-model="blue" class="slider" id="blue"></td>
-                </tr>
-            </table>
         </div>
         <div id="tiedot">
-            <form  method="POST" action="">
+            <form action="/tasks" method="POST">
                 <fieldset>
                     <legend>Personalia:</legend>
                     <label for="email">Email:</label>
@@ -113,25 +81,41 @@
                     <label for="city">City:</label>
                     <input v-model="city" type="text" id="city" name="city"><br><br>
 
-                    <input type="submit" value="Submit22asdasda">
+                    <input type="submit" value="Submit">
                 </fieldset>
             </form>
         </div>
+        <div id="colours">
+            <form>
+                <fieldset>
+                    <input type="text" v-model="color"/>
+                    <input type="color" v-model="color"/>
+                </fieldset>
+            </form>
+        </div>
+        <div id="work">
+            <form>
+                <fieldset v-for="(exp, index) in items">
+                    <legend>Workplace {{index}}:</legend>
+                    <label for="expname">Workplace name:</label>
+                    <input v-model="exp.Name" type="text" id="expname">
 
+                    <label for="worklenght">Work lenght:</label>
+                    <input v-model="exp.time" type="text" id="worklenght"><br>
+
+                    <label for="worktype">Work type:</label>
+                    <input v-model="exp.type" type="text" id="worktype"><br>
+
+                    <textarea v-model="exp.text" type="text" rows="20" cols="50"></textarea>
+                </fieldset>
+            </form>
+        </div>
     </footer>
 
-    <form action="http://localhost:3000/api/submitting" method="post">
-        <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname">
-        <input type="submit" value="Submit">
-    </form>
-    <button formaction="/api/gettest" formmethod="get"> GET TESTI</button>
 </div>
 </body>
 
-<script  src="../js/javascript.js"></script>
+<script type="module" src="../js/javascript.js"></script>
 
 
 </html>
