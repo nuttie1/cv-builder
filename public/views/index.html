@@ -18,7 +18,7 @@
     <section>
         <summary>
             <figure>
-                <img src="media/megagigalich.png">
+                <img src="../media/megagigalich.png">
                 <h1>{{ message }}</h1>
             </figure>
             <aside>
@@ -94,6 +94,8 @@
             </form>
         </div>
         <div id="work">
+            <button @click="items.shift()">akuutti poisto</button>
+            <button @click="items.push({ Name: '', time: '', type: '',text: ''})">lisää</button>
             <form>
                 <fieldset v-for="(exp, index) in items">
                     <legend>Workplace {{index}}:</legend>
@@ -101,12 +103,13 @@
                     <input v-model="exp.Name" type="text" id="expname">
 
                     <label for="worklenght">Work lenght:</label>
-                    <input v-model="exp.time" type="text" id="worklenght"><br>
+                    <input v-model="exp.time" type="date" id="worklenght"><br>
 
                     <label for="worktype">Work type:</label>
                     <input v-model="exp.type" type="text" id="worktype"><br>
 
                     <textarea v-model="exp.text" type="text" rows="20" cols="50"></textarea>
+                    <button @click="items.splice(index,1)">poisto</button>
                 </fieldset>
             </form>
         </div>
