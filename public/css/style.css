@@ -242,14 +242,27 @@ footer {
     width: 100%;
 }
 #introduction{
-    width: 60%;
+    width: 100%;
     height: 300px;
     justify-content: center;
     margin: auto;
+    margin-bottom: 50px;
 }
 #introduction textarea {
     height: 300px;
     width: 100%;
+}
+#listam {
+    display: block;
+    width: 100%;
+    height: 50px;
+}
+#listam button{
+    height: 100%;
+    width: 200px;
+    margin: auto;
+    justify-content: center;
+
 }
 
 
