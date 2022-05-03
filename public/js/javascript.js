@@ -29,17 +29,7 @@ let app = new Vue({
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
                     console.log(xmlhttp.response);
-                    //  json = JSON.parse(xmlhttp.response);
-                    console.log(json);
-                    if (json.length > 0) { // something found
-                        console.log("Kaikki kunnossa");
-                        // showList(json);
-                    } else {
-                        console.log("Kaikki ei oo kunnossa");
-                        //   document.getElementById("locationInfo").innerHTML = "<br/>Ei tapahtumatietoja tältä ajalta.";
-
-                    }
-
+                    console.log("Kaikki ok!")
                 }
             };
             let jsonItems = JSON.stringify(this.items);
