@@ -19,6 +19,7 @@
         <summary>
             <figure>
                 <img src="../media/megagigalich.png">
+
                 <h1>{{ message }}</h1>
             </figure>
             <aside>
@@ -57,7 +58,7 @@
     <footer>
 
         <div id="kuvanimi">
-            <form action="">
+            <form action="/api/haku" method="post">
                 <fieldset>
                     <legend>Personalia:</legend>
                     <label for="name">Name:</label><br>
@@ -69,7 +70,7 @@
             </form>
         </div>
         <div id="tiedot">
-            <form action="/tasks" method="POST">
+            <form action="/api/submitting" method="POST">
                 <fieldset>
                     <legend>Personalia:</legend>
                     <label for="email">Email:</label>
@@ -112,6 +113,7 @@
                     <button @click="items.splice(index,1)">poisto</button>
                 </fieldset>
             </form>
+        <button id="saveNappi" v-on:click = "xd"> SAVE</button>
         </div>
     </footer>
 
@@ -119,6 +121,5 @@
 </body>
 
 <script type="module" src="../js/javascript.js"></script>
-
 
 </html>
