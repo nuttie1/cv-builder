@@ -25,20 +25,21 @@ app.get('/index', (req, res) => {
     res.sendFile(process.cwd() + '/cv-builder/public/views/index.html')
 })
 
-app.post('/api/:message/:email/:phone/:city/:items', urlencodedParser, async (req, res) => {
+app.post('/api/:message/:email/:phone/:city/:introduction/:items', urlencodedParser, async (req, res) => {
     res.status(200);
     let name = req.params.message;
     let email = req.params.email;
     let phone = req.params.phone.replace(/\s/g, '');
+    let intro = req.params.introduction;
     let city = req.params.city;
     let items = req.params.items;
 
     console.log("Tallennetaan tietoja...");
 
     try {
-        const result = await db.pool.query("INSERT INTO cv_table (name, email, phone, residence, items) VALUES ('" + name + "', '" + email + "', '" + phone + "', '" + city + "', '" + items + "');");
+        const result = await db.pool.query("INSERT INTO cv_table (name, email, phone, residence, introduction, items) VALUES ('" + name + "', '" + email + "', '" + phone + "', '" + city + "', '" + intro + "', '" + items + "');");
         res.send(result);
-        await db.pool.end();
+
     } catch (err) {
         console.log("Tallennuksessa tuli virhe: " + err);
     }
@@ -52,7 +53,7 @@ app.post('/api/getcv/:id', urlencodedParser, async (req, res) => {
         let id = req.params.id.replace(":","");
         const results = await db.pool.query("SELECT email, phone, name, introduction, items, residence FROM cv_table WHERE id_primary=" + id + ";");
         res.send(results);
-        await db.pool.end();
+
         console.log(results);
     } catch (err) {
         console.log("Haussa tuli virhe: " + err);

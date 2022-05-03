@@ -37,7 +37,7 @@ let app = new Vue({
             };
             let jsonItems = JSON.stringify(this.items);
             xmlhttp.open("POST", "http://localhost:3000/api/" + this.message + "/" + this.email + "/" +
-                this.phone + "/" + this.city + "/" + jsonItems, true);
+                this.phone + "/" + this.city + "/" + this.introduction + "/" + jsonItems, true);
             xmlhttp.send();
         },
         zippaus: function(){
@@ -90,30 +90,3 @@ let app = new Vue({
 
 });
 
-
-/*
-    // POST request using fetch with async/await
-    const requestOptions = {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: dataMessage
-    };
-    const response = await fetch("/api/submitting", requestOptions);
-    const data = await response.json();
-    this.postId = data.id;
-
-});*/
-
-//const db = require('cv-builder/server/db')
-
-
-/*
-app.get('cv-nuilder/personalia', (req, res) => {
-    console.log("Somehting");
-    res.end();
-});
-
-*/
-
-
-//document.documentElement.style.setProperty('--border', 'red');
