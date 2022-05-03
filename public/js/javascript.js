@@ -37,7 +37,7 @@ let app = new Vue({
             };
             let jsonItems = JSON.stringify(this.items);
             xmlhttp.open("POST", "http://localhost:3000/api/" + this.message + "/" + this.email + "/" +
-                this.phone + "/" + this.city + "/" + jsonItems, true);
+                this.phone + "/" + this.city + "/" + jsonItems + "/" + this.introduction, true);
             xmlhttp.send();
         },
         zippaus: function(){
