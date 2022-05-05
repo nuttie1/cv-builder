@@ -38,8 +38,30 @@ let app = new Vue({
             xmlhttp.send();
         }
 
-    }
+    },
+    mounted: function () {
 
+
+        console.log("Haku");
+        let tiedot;
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                tiedot = JSON.parse(xmlhttp.response);
+                console.log(xmlhttp.response);
+                console.log("Kaikki ok!")
+                console.log(tiedot);
+
+                this.updateU(tiedot);
+
+            }
+        };
+
+
+        xmlhttp.open("POST", "http://localhost:3000/api/getcv/:" + "37", true);
+        xmlhttp.send();
+
+    }
 
 });
 

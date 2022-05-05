@@ -11,8 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Akshar&family=Source+Sans+Pro:wght@300;400&display=swap"
           rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="../js/FileSaver.min.js"></script>
-    <script src="../js/jszip.min.js"></script>
 </head>
 <body>
 
@@ -62,7 +60,6 @@
                     <input v-model="message" type="text" id="name" name="fname"><br>
                     <label for="kuva">Picture:</label><br>
                     <input type="file" id="kuva" name="lname" value="Doe"><br><br>
-                    <input type="submit" value="Submit">
                 </fieldset>
             </form>
         </div>
@@ -79,15 +76,6 @@
                     <label for="city">City:</label>
                     <input v-model="city" type="text" id="city" name="city"><br><br>
 
-                    <input type="submit" value="Submit">
-                </fieldset>
-            </form>
-        </div>
-        <div id="colours">
-            <form>
-                <fieldset>
-                    <input type="text" v-model="color"/>
-                    <input type="color" v-model="color"/>
                 </fieldset>
             </form>
         </div>
@@ -99,8 +87,10 @@
             </form>
         </div>
         <div id="work">
-            <button @click="items.shift()">akuutti poisto</button>
-            <button @click="items.push({ Name: '', time: '', type: '',text: ''})">lisää</button>
+            <div id="listam">
+                <button @click="items.shift()">poista listasta</button>
+                <button @click="items.push({ Name: '', time: '', type: '',text: ''})">lisää listaan</button>
+            </div>
             <form>
                 <fieldset v-for="(exp, index) in items">
                     <legend>Workplace {{index}}:</legend>
@@ -117,7 +107,6 @@
                     <button @click="items.splice(index,1)">poisto</button>
                 </fieldset>
             </form>
-
         <button id="saveNappi" v-on:click = "saveFunc"> SAVE</button>
             <form method="get" action="downloadpackage.zip">
                 <button type="submit">Download!</button>
