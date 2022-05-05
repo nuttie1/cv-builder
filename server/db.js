@@ -1,7 +1,9 @@
-// Use the MariaDB Node.js Connector
 const mariadb = require('mariadb');
 
-// Create a connection pool
+/**
+ * Luodaan pool jonka avulla palvelin ottaa yhteyden metropolian tietokanta palvelimeen.
+ * @type {Pool}
+ */
 const pool = mariadb.createPool({
     host: "mysql.metropolia.fi",
     port: 3306,
@@ -11,7 +13,10 @@ const pool = mariadb.createPool({
     connectionLimit: 5
 
 });
-// Expose a method to establish connection with MariaDB SkySQL
+
+/**
+ * Pool objekti exportataan, jotta sitä voidaan käyttää connection.js tiedostossa.
+ * */
 module.exports = Object.freeze({
     pool: pool
 });

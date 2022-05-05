@@ -3,7 +3,7 @@ let app = new Vue({
     el: '#app',
     data: {
         message: 'test', email: 'giga.chad@meme.fi', phone: '044 1245 678',
-        city: 'Espoo', color: '#000000',introduction: 'Hello this is person',
+        city: 'Espoo', color: '#000000', introduction: 'Hello this is person',
         items: [
             {
                 Name: 'Prisma, Iso-Omena23', time: '2018 - 2020', type: 'Hyllyttäjä',
@@ -18,77 +18,68 @@ let app = new Vue({
                     'Aliquam consectetur mauris nec leo blandit, ut gravida massa imperdiet. In eget arcu id enim mattis ultrices. Mauris venenatis luctus luctus.'
             }
         ]
-
     },
-    methods: {
-        ui: function(msg){
-            this.message = msg;
-        },
-        saveFunc: function () {
 
+    methods: {
+        saveFunc: function () {
             console.log("savetus");
-            var xmlhttp = new XMLHttpRequest();
+
+            /**
+             * Funktio lähettää post pyynnöllä vuen muuttujat, jotka vastaanottaja connection.js -tiedostossa tallentaa tietokantaan.
+             * */
+            let xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
                     console.log(xmlhttp.response);
                     console.log("Kaikki ok!")
+
+                } else {
+                    console.log("Tallentamisessa meni jokin pieleen koodi: " + xmlhttp.status)
                 }
             };
+
             let jsonItems = JSON.stringify(this.items);
             xmlhttp.open("POST", "http://localhost:3000/api/" + this.message + "/" + this.email + "/" +
                 this.phone + "/" + this.city + "/" + jsonItems + "/" + this.introduction, true);
 
-
-
             xmlhttp.send();
-        },
-        zippaus: function(){
-            var zip = new JSZip();
-            zip.file("Hello.txt", "Hello World\n");
-            zip.file("Hello2.txt", "Hello World\n");
-            var img = zip.folder("images");
-            zip.file("gigachad.jpg",'.jpg');
-            img.file("chad.webp").async("arraybuffer");
-            zip.generateAsync({type:"blob"})
-            .then(function(content) {
-                // see FileSaver.js
-                saveAs(content, "example.zip");
-            });
-
         }
-
     },
+
+    /* Mounted kutsutaan kun vue on käynnistynyt */
     mounted: function () {
-
-
         console.log("Haku");
+
+        /**
+         * Haetaan tiedot connection.js:stä, joka tekee tietokanta haun annetun id:n avulla.
+         * Saadut tiedot annetaan vuen muuttujille.
+         *
+         * Ohjelmassa käytetään XMLHttpRequestia, koska se on tietoturvallista syistä paras projektiimme.
+         * */
+
         let tiedot;
         let xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
                 tiedot = JSON.parse(xmlhttp.response);
                 console.log(xmlhttp.response);
-                console.log("Kaikki ok!")
-                console.log(tiedot);
-                console.log(tiedot[0].name);
-                let lista =  JSON.parse(tiedot[0].items);
-                console.log(lista[0].Name);
-                app.items = lista;
+                console.log("Tietokannasta haku: ok!")
+
+                app.items = JSON.parse(tiedot[0].items);
                 app.message = tiedot[0].name;
                 app.email = tiedot[0].email;
                 app.phone = tiedot[0].phone;
                 app.city = tiedot[0].residence;
                 app.introduction = tiedot[0].introduction;
 
+            } else {
+                console.log("Jokin meni pieleen post hakemisessa koodi: " + xmlhttp.status)
             }
         };
-
 
         xmlhttp.open("POST", "http://localhost:3000/api/getcv/:" + "39", true);
         xmlhttp.send();
 
     }
-
-
 });
 
