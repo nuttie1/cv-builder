@@ -27,6 +27,7 @@ app.get('', (req, res) => {
 /**
  * Lähetetään index.html tiedosto
  * */
+
 app.get('/index', (req, res) => {
     res.sendFile(process.cwd() + '/cv-builder/public/views/index.html')
 })

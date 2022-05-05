@@ -21,9 +21,8 @@ let app = new Vue({
 
     },
     methods: {
-        xd: function () {
-            var json;
 
+        saveFunc: function () {
             console.log("savetus");
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function () {

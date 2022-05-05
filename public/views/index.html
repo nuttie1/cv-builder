@@ -71,10 +71,10 @@
                 <fieldset>
                     <legend>Personalia:</legend>
                     <label for="email">Email:</label>
-                    <input v-model="email" type="text" id="email" name="email">
+                    <input v-model="email" type="email" id="email" name="email">
 
                     <label for="phone">Phone number:</label>
-                    <input v-model="phone" type="text" id="phone" name="phone"><br>
+                    <input v-model="phone" type="number" id="phone" name="phone"><br>
 
                     <label for="city">City:</label>
                     <input v-model="city" type="text" id="city" name="city"><br><br>
@@ -117,8 +117,11 @@
                     <button @click="items.splice(index,1)">poisto</button>
                 </fieldset>
             </form>
-        <button id="saveNappi" v-on:click = "xd"> SAVE</button>
-            <button id="zip" v-on:click = "zippaus">zip</button>
+
+        <button id="saveNappi" v-on:click = "saveFunc"> SAVE</button>
+            <form method="get" action="downloadpackage.zip">
+                <button type="submit">Download!</button>
+            </form>
         </div>
     </footer>
 
