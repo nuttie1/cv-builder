@@ -1,5 +1,5 @@
 # cv-builder
-Web-sovelluskehitys 1 -kurssin ryhmä projekti 
+Web-sovelluskehitys 1 -kurssin ryhmäprojekti 
 Tekijät: Niko Ahonen, Riku Koski ja Otto Palssa
 
 ## Miten sovellusta käytetään
