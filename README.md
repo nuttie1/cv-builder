@@ -22,7 +22,7 @@ parameters: id
 
 method: 'GET'  
 endpoint: http://localhost:3000/index  
-response: html.file  
+response: html file  
 parameters: none  
 
 ## Kuvankaappaus etusivusta
